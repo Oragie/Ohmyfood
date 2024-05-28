@@ -1,0 +1,29 @@
+/***** general *****/
+
+* {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  h1{
+    font-weight: 700;
+    font-size: 24px;
+  }
+
+  h2{
+    font-family: "Shrikhand", serif;
+    font-size: 28px;
+  }
+
+  :root{
+    --main-color:var(#9356DC );
+    --secondary-color:var(#FF79DA);
+    --third-color:var(#99E2D0);
+    --BG-color:var(#F6F6F6;
+    )
+  }
