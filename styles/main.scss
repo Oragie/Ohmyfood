@@ -194,7 +194,7 @@
         .full--heart{
             opacity: 0;
             transition: all 1000ms;
-            &:hover{
+            &:active{
                 opacity: 1;
                 background: -webkit-linear-gradient($--main-color,$--secondary-color);
                 -webkit-background-clip: text;
