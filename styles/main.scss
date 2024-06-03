@@ -21,13 +21,16 @@
   }
 
   
-    $--main-color: #9356DC;
-    $--secondary-color: #FF79DA;
-    $--third-color:#99E2D0;
-    $--newtxt--color : #008766;
-    $--BG-color: #F6F6F6;
-    $--text--color: white;
-    $--reversetext--color: black;
+     /* variable */
+  $--main-color: #9356DC;
+  $--secondary-color: #FF79DA;
+  $--third-color:#99E2D0;
+  $--newtxt-color : #008766;
+  $--BG-color: #F6F6F6;
+  $--text-color: #FFFFFF;
+  $--reversetext-color:#000000 ;
+  $--navbg-color: #EAEAEA;
+  $--deepgrey-color: #353535;
   
 /* BEM (Block element modifictaor) */
 /* ceci est notre bloc */
@@ -50,8 +53,8 @@
         justify-content: center;
         align-items: center;
         width: 100%;
-        background: #EAEAEA;
-        color: #353535;
+        background: $--navbg-color;
+        color: $--deepgrey-color;
         padding: 1rem 0 1rem 0;
         gap: 1rem;
         box-shadow: 0px 4px 4px 0px #00000040;
@@ -95,7 +98,7 @@
     border-radius: 30px;
     box-shadow: 0px 4px 10px 0px #00000040;
     background: linear-gradient(350deg, $--main-color -11.44%, $--secondary-color 123.93%);
-    color: white;
+    color: $--text-color;
     text-decoration: none;
     transition: opacity 1000ms;
     &:hover{
@@ -146,7 +149,7 @@
                 top: 35%;
                 border-radius: 50%;
                 background-color: $--main-color;
-                color: white;
+                color: $--text-color;
                 padding: 0 0.3rem 0 0.3rem;
             }
         }
@@ -169,14 +172,14 @@
     }
     a{
         text-decoration: none;
-        color: black;
+        color: $--reversetext-color;
     }
     .card{
         max-width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background-color: white;
+        background-color: $--text-color;
         box-shadow: 0px 4px 15px 0px #0000001A;
         border-radius: 15px;
         margin: 1.5rem;
@@ -244,8 +247,8 @@
 footer{
     display: flex;
     flex-direction: column;
-    background-color: #353535;
-    color: white;
+    background-color: $--deepgrey-color;
+    color: $--text-color;
     section{
         flex-direction: column;
     }
@@ -266,7 +269,7 @@ footer{
         justify-content: flex-start;
         align-items: center;
         padding: 0 0 0.5rem 2rem;
-        color: white;
+        color: $--text-color;
         font-size: 16px;
         text-decoration: none;
         .fa-handshake-angle,
