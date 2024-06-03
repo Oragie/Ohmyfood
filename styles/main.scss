@@ -26,6 +26,8 @@
     $--third-color:#99E2D0;
     $--newtxt--color : #008766;
     $--BG-color: #F6F6F6;
+    $--text--color: white;
+    $--reversetext--color: black;
   
 /* BEM (Block element modifictaor) */
 /* ceci est notre bloc */
@@ -179,7 +181,25 @@
         border-radius: 15px;
         margin: 1.5rem;
         position: relative;
+        .fa-heart{
+            font-size: 24px;
+            position: absolute;
+            left: 85%;
+            bottom: 10%;
+            pointer-events: painted;
+        }
+        .full--heart{
+            opacity: 0;
+            transition: all 1000ms;
+            &:hover{
+                opacity: 1;
+                background: -webkit-linear-gradient($--main-color,$--secondary-color);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
     }
+    
     .new{
         position: absolute;
         font-size: 14px;
@@ -196,7 +216,7 @@
         object-fit: cover;
         position: relative;
     }
-   coucou
+   
     .card__like{
         display: flex;
         flex-direction: row;
@@ -215,22 +235,7 @@
             }
             
         }
-        .fa-heart{
-            font-size: 24px;
-            position: absolute;
-            left: 85%;
-            pointer-events: painted;
-        }
-        .full--heart{
-            opacity: 0;
-            transition: all 1000ms;
-            &:hover{
-                opacity: 1;
-                background: -webkit-linear-gradient($--main-color,$--secondary-color);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-        }
+        
     }
     
 }
