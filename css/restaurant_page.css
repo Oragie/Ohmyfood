@@ -7,11 +7,13 @@
   margin: 0;
   padding: 0;
   text-align: center;
+  max-width: 100%;
 }
 
 /* variable */
 /* loader*/
 .loader {
+  visibility: visible;
   position: absolute;
   z-index: 1000;
   width: 100%;
@@ -20,43 +22,45 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeout 3.8s linear 1;
+  animation-fill-mode: forwards;
 }
-
-.lettre {
+.loader .lettre {
+  position: relative;
   color: #9356DC;
   font-size: 2rem;
-  letter-spacing: 1rem;
-  margin-bottom: 65%;
-  animation: flash 1.8s linear infinite;
+  margin-bottom: 55%;
+  animation: flash 1.2s linear 3;
+  animation-fill-mode: forwards;
 }
-.lettre:nth-child(1) {
+.loader .lettre:nth-child(1) {
   animation-delay: 0, 1s;
 }
-.lettre:nth-child(2) {
+.loader .lettre:nth-child(2) {
   animation-delay: 0.2s;
 }
-.lettre:nth-child(3) {
+.loader .lettre:nth-child(3) {
   animation-delay: 0.3s;
 }
-.lettre:nth-child(4) {
+.loader .lettre:nth-child(4) {
   animation-delay: 0.4s;
 }
-.lettre:nth-child(5) {
+.loader .lettre:nth-child(5) {
   animation-delay: 0.5s;
 }
-.lettre:nth-child(6) {
+.loader .lettre:nth-child(6) {
   animation-delay: 0.6s;
 }
-.lettre:nth-child(7) {
+.loader .lettre:nth-child(7) {
   animation-delay: 0.7s;
 }
-.lettre:nth-child(8) {
+.loader .lettre:nth-child(8) {
   animation-delay: 0.8s;
 }
-.lettre:nth-child(9) {
+.loader .lettre:nth-child(9) {
   animation-delay: 0.9s;
 }
-.lettre:nth-child(10) {
+.loader .lettre:nth-child(10) {
   animation-delay: 1s;
 }
 
@@ -75,6 +79,24 @@
     text-shadow: 0 0 7px #FF79DA;
   }
 }
+@keyframes fadeout {
+  0% {
+    opacity: 100%;
+  }
+  80% {
+    opacity: 100%;
+  }
+  90% {
+    opacity: 50%;
+    background-color: none;
+    z-index: 0;
+  }
+  100% {
+    opacity: 0%;
+    background-color: none;
+    z-index: -9999;
+  }
+}
 /** Header **/
 /* back button and logo*/
 .navbar {
@@ -87,7 +109,6 @@
 }
 .navbar .navbar__logo {
   padding: 1rem;
-  max-width: 100%;
   width: 197px;
 }
 .navbar a {
@@ -111,11 +132,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 .restaurant__img h1 {
   width: 100%;
-  position: absolute;
+  position: relative;
   bottom: 0;
   left: 0;
   background-color: #F6F6F6;
@@ -126,6 +150,7 @@
   padding-top: 2rem;
   text-align: left;
   padding-left: 1rem;
+  padding-bottom: 1rem;
 }
 .restaurant__img .fa-heart {
   font-size: 24px;
@@ -147,7 +172,7 @@
 
 /* menu choice */
 main {
-  max-width: 100%;
+  width: 100%;
   background-color: #F6F6F6;
 }
 
@@ -172,19 +197,15 @@ h2:after {
 }
 
 section {
-  max-width: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: self-start;
 }
 section .card {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  box-sizing: content-box;
   margin: 0.4rem 1rem 0 0.8rem;
   padding: 0.5rem 1rem 0.5rem 0.8rem;
   background-color: #FFFFFF;
@@ -199,6 +220,32 @@ section .card p {
   font-weight: 300;
   font-size: 16px;
   text-align: left;
+}
+section .card :hover .moreinfo {
+  visibility: visible;
+  transition: width 0.5s;
+  opacity: 1;
+  width: 3rem;
+}
+section .cardiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  margin: 0;
+  padding: -2rem;
+}
+section .moreinfo {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  visibility: collapse;
+  width: 0%;
+  opacity: 1;
+  height: -moz-max-content;
+  height: max-content;
+  bottom: 0px;
+  background-color: #99E2D0;
 }
 
 /* order button */
