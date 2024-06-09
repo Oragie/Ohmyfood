@@ -20,6 +20,94 @@ h2 {
   font-size: 28px;
 }
 
+/* variable */
+/*   loader */
+.loader {
+  visibility: visible;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  animation: fadeout 3s linear 1;
+  animation-fill-mode: forwards;
+}
+.loader .lettre {
+  max-width: 100%;
+  position: relative;
+  color: #9356DC;
+  font-size: 2rem;
+  font-family: "Shrikhand", serif;
+  margin: auto;
+  padding: 0;
+  font-size: clamp(1rem, 8vw, 120px);
+  animation: flash 1.2s linear 3;
+  animation-fill-mode: forwards;
+}
+.loader .lettre:nth-child(1) {
+  animation-delay: 0, 1s;
+}
+.loader .lettre:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loader .lettre:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.loader .lettre:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.loader .lettre:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.loader .lettre:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.loader .lettre:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.loader .lettre:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+@keyframes flash {
+  0% {
+    color: #FF79DA;
+    text-shadow: 0 0 7px #FF79DA;
+    border-bottom: solid 2px #008766;
+  }
+  90% {
+    color: #9356DC;
+    text-shadow: none;
+  }
+  100% {
+    color: #FF79DA;
+    text-shadow: 0 0 7px #FF79DA;
+  }
+}
+@keyframes fadeout {
+  0% {
+    opacity: 100%;
+  }
+  80% {
+    opacity: 100%;
+  }
+  90% {
+    opacity: 50%;
+    background-color: none;
+    z-index: 0;
+  }
+  100% {
+    opacity: 0%;
+    background-color: none;
+    z-index: -9999;
+  }
+}
 /* BEM (Block element modifictaor) */
 /* ceci est notre bloc */
 .navbar {
@@ -82,7 +170,7 @@ h2 {
   border-radius: 30px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
   background: linear-gradient(350deg, #9356DC -11.44%, #FF79DA 123.93%);
-  color: white;
+  color: #FFFFFF;
   text-decoration: none;
   transition: opacity 1000ms;
 }
@@ -132,7 +220,7 @@ h2 {
   top: 35%;
   border-radius: 50%;
   background-color: #9356DC;
-  color: white;
+  color: #FFFFFF;
   padding: 0 0.3rem 0 0.3rem;
 }
 
@@ -153,14 +241,14 @@ h2 {
 }
 .restaurants a {
   text-decoration: none;
-  color: black;
+  color: #000000;
 }
 .restaurants .card {
   max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: white;
+  background-color: #FFFFFF;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
   border-radius: 15px;
   margin: 1.5rem;
@@ -177,7 +265,7 @@ h2 {
   opacity: 0;
   transition: all 1000ms;
 }
-.restaurants .card .full--heart:hover {
+.restaurants .card .full--heart:active {
   opacity: 1;
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
@@ -224,7 +312,7 @@ footer {
   display: flex;
   flex-direction: column;
   background-color: #353535;
-  color: white;
+  color: #FFFFFF;
 }
 footer section {
   flex-direction: column;
@@ -246,7 +334,7 @@ footer a {
   justify-content: flex-start;
   align-items: center;
   padding: 0 0 0.5rem 2rem;
-  color: white;
+  color: #FFFFFF;
   font-size: 16px;
   text-decoration: none;
 }
