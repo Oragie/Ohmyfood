@@ -10,10 +10,15 @@
   max-width: 100%;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
 /* variable */
 /* loader*/
 .loader {
-  visibility: visible;
+  visibility: hidden;
   position: absolute;
   z-index: 1000;
   width: 100%;
@@ -29,7 +34,8 @@
   position: relative;
   color: #9356DC;
   font-size: 2rem;
-  margin-bottom: 55%;
+  font-family: "Shrikhand", serif;
+  margin-bottom: 65%;
   animation: flash 1.2s linear 3;
   animation-fill-mode: forwards;
 }
@@ -56,12 +62,6 @@
 }
 .loader .lettre:nth-child(8) {
   animation-delay: 0.8s;
-}
-.loader .lettre:nth-child(9) {
-  animation-delay: 0.9s;
-}
-.loader .lettre:nth-child(10) {
-  animation-delay: 1s;
 }
 
 @keyframes flash {
@@ -175,17 +175,17 @@ main {
   width: 100%;
   background-color: #F6F6F6;
 }
-
-h2 {
+main h2 {
   display: table;
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 300;
   text-align: left;
   padding: 1rem 0 0.5rem 0.8rem;
+  margin-bottom: 1rem;
   position: relative;
 }
-h2:after {
+main h2:after {
   content: "";
   position: absolute;
   width: 60%;
@@ -195,59 +195,83 @@ h2:after {
   right: 25%;
   border-bottom: 3px solid #99E2D0;
 }
-
-section {
-  width: 100%;
+main section {
+  max-width: 100%;
   display: flex;
   flex-direction: column;
+  margin: 0 auto 0;
+  padding: 0 1em;
+  gap: 1rem;
+  transform: translateX(-100%);
+  visibility: hidden;
+  animation: slide-in 0.75s ease-out forwards;
 }
-section .card {
+main section.start__menu {
+  animation-delay: 1s;
+}
+main section.middle__menu {
+  animation-delay: 2s;
+}
+main section.end__menu {
+  animation-delay: 3s;
+}
+main .card {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  margin: 0.4rem 1rem 0 0.8rem;
-  padding: 0.5rem 1rem 0.5rem 0.8rem;
   background-color: #FFFFFF;
   border-radius: 15px;
   box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1019607843);
 }
-section .card h3 {
-  font-weight: 500;
-  text-align: left;
-}
-section .card p {
-  font-weight: 300;
-  font-size: 16px;
-  text-align: left;
-}
-section .card :hover .moreinfo {
+main :hover .fa-circle-check {
   visibility: visible;
   transition: width 0.5s;
   opacity: 1;
   width: 3rem;
 }
-section .cardiv {
+main .card_txt {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  text-align: left;
+  padding: 0.4rem 0 0.4rem 0.8rem;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+main .card_txt h3 {
+  font-weight: 500;
+}
+main .card_txt p {
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+main .cardiv {
+  width: 30%;
   display: flex;
   flex-direction: row;
-  justify-content: right;
-  align-items: center;
-  margin: 0;
-  padding: -2rem;
+  align-items: end;
 }
-section .moreinfo {
+main .cardiv p {
   position: relative;
-  left: 0;
-  bottom: 0;
+  padding: 0 0.4rem 0.4rem 0;
+}
+main .cardiv .fa-circle-check {
+  position: absolute;
   visibility: collapse;
-  width: 0%;
-  opacity: 1;
-  height: -moz-max-content;
-  height: max-content;
-  bottom: 0px;
+  padding: 1rem;
+  border-radius: 0 15px 15px 0;
   background-color: #99E2D0;
 }
 
+@keyframes slide-in {
+  100% {
+    transform: translateX(0%);
+    visibility: visible;
+  }
+}
 /* order button */
 button {
   display: inline-block;
