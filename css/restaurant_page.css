@@ -11,98 +11,11 @@
 }
 
 html, body {
-  height: 100%;
+  height: 100vh;
   width: 100%;
 }
 
 /* variable */
-/* loader*/
-.loader {
-  visibility: visible;
-  position: absolute;
-  z-index: 1000;
-  width: 100%;
-  height: 100vh;
-  background-color: #000000;
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  animation: fadeout 3s linear 1;
-  animation-fill-mode: forwards;
-}
-.loader .lettre {
-  max-width: 100%;
-  position: relative;
-  color: #9356DC;
-  font-size: 2rem;
-  font-family: "Shrikhand", serif;
-  margin: auto;
-  padding: 0;
-  font-size: clamp(1rem, 8vw, 120px);
-  animation: flash 1.2s linear 3;
-  animation-fill-mode: forwards;
-}
-.loader .lettre:nth-child(1) {
-  animation-delay: 0, 1s;
-}
-.loader .lettre:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.loader .lettre:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.loader .lettre:nth-child(4) {
-  animation-delay: 0.4s;
-}
-.loader .lettre:nth-child(5) {
-  animation-delay: 0.5s;
-}
-.loader .lettre:nth-child(6) {
-  animation-delay: 0.6s;
-}
-.loader .lettre:nth-child(7) {
-  animation-delay: 0.7s;
-}
-.loader .lettre:nth-child(8) {
-  animation-delay: 0.8s;
-}
-
-@keyframes flash {
-  0% {
-    color: #FF79DA;
-    text-shadow: 0 0 7px #FF79DA;
-    border-bottom: solid 2px #008766;
-  }
-  90% {
-    color: #9356DC;
-    text-shadow: none;
-  }
-  100% {
-    color: #FF79DA;
-    text-shadow: 0 0 7px #FF79DA;
-  }
-}
-@keyframes fadeout {
-  0% {
-    opacity: 100%;
-  }
-  80% {
-    opacity: 100%;
-  }
-  90% {
-    opacity: 50%;
-    background-color: none;
-    z-index: 0;
-  }
-  100% {
-    opacity: 0%;
-    background-color: none;
-    z-index: -9999;
-  }
-}
 /** Header **/
 /* back button and logo*/
 .navbar {
@@ -150,8 +63,8 @@ html, body {
   left: 0;
   background-color: #F6F6F6;
   font-family: Shrikhand;
-  font-size: 28px;
-  font-weight: 400;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vh, 3rem);
   border-radius: 50px 50px 0 0;
   padding-top: 2rem;
   text-align: left;
@@ -188,13 +101,12 @@ main h2 {
   font-weight: 300;
   text-align: left;
   padding: 1rem 0 0.5rem 0.8rem;
-  margin-bottom: 1rem;
   position: relative;
 }
 main h2:after {
   content: "";
   position: absolute;
-  width: 60%;
+  width: 8%;
   height: 1px;
   bottom: 0;
   left: 0.8rem;
@@ -221,61 +133,89 @@ main section.middle__menu {
 main section.end__menu {
   animation-delay: 6s;
 }
-main .card {
+
+@keyframes slide-in {
+  100% {
+    transform: translateX(0%);
+    visibility: visible;
+  }
+}
+.card {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   background-color: #FFFFFF;
   border-radius: 15px;
-  box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1019607843);
+  box-shadow: 0px 0.2rem 1rem 0px rgba(0, 0, 0, 0.1019607843);
 }
-main :hover .fa-circle-check {
-  visibility: visible;
-  transition: width 0.5s;
-  opacity: 1;
-  width: 3rem;
-}
-main .card_txt {
-  width: 70%;
+.card .card_txt {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: baseline;
   text-align: left;
   padding: 0.4rem 0 0.4rem 0.8rem;
+}
+.card .card_txt h3 {
+  font-weight: 500;
   text-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-main .card_txt h3 {
-  font-weight: 500;
-}
-main .card_txt p {
+.card .card_txt p {
   font-weight: 300;
   font-size: 0.8rem;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-main .cardiv {
-  width: 30%;
+.card .cardiv {
   display: flex;
   flex-direction: row;
-  align-items: end;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
-main .cardiv p {
+.card .cardiv p {
+  font-weight: 500;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+.card .cardiv p span {
+  display: inline-block;
   position: relative;
-  padding: 0 0.4rem 0.4rem 0;
+  overflow: hidden;
 }
-main .cardiv .fa-circle-check {
-  position: absolute;
-  visibility: collapse;
-  padding: 1rem;
-  border-radius: 0 15px 15px 0;
-  background-color: #99E2D0;
+.card .cardiv p span::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+}
+.card .cardiv p:nth-child(1) {
+  animation: price-moving 0s 0.2s;
+}
+.card .cardiv p:nth-child(1) span::after {
+  font-family: "FontAwesome";
+  text-align: center;
+  background: #99E2D0;
+  animation: appear 0.2s, ease-out, forwards;
 }
 
-@keyframes slide-in {
+@keyframes price-moving {
   100% {
-    transform: translateX(0%);
-    visibility: visible;
+    transform: translateX(50%);
+  }
+}
+@keyframes appear {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(50%);
+    opacity: 1;
   }
 }
 /* order button */
