@@ -16,6 +16,13 @@ html, body {
 }
 
 /* variable */
+p {
+  padding-left: 1rem;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /** Header **/
 /* back button and logo*/
 .navbar {
@@ -58,13 +65,12 @@ html, body {
 }
 .restaurant__img h1 {
   width: 100%;
-  position: relative;
   bottom: 0;
   left: 0;
   background-color: #F6F6F6;
   font-family: Shrikhand;
   font-weight: 700;
-  font-size: clamp(2rem, 5vh, 3rem);
+  font-size: clamp(1rem, 5vh, 3rem);
   border-radius: 50px 50px 0 0;
   padding-top: 2rem;
   text-align: left;
@@ -75,18 +81,21 @@ html, body {
   font-size: 24px;
   position: absolute;
   left: 85%;
-  bottom: 1rem;
+  bottom: 30%;
   pointer-events: painted;
 }
 .restaurant__img .full--heart {
   opacity: 0;
   transition: all 1000ms;
 }
-.restaurant__img .full--heart:hover {
+.restaurant__img .full--heart:active {
   opacity: 1;
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.restaurant__img .full--heart:not(:active) {
+  opacity: 0;
 }
 
 /* menu choice */
@@ -142,79 +151,116 @@ main section.end__menu {
 }
 .card {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   background-color: #FFFFFF;
-  border-radius: 15px;
+  border-radius: 0.8rem;
   box-shadow: 0px 0.2rem 1rem 0px rgba(0, 0, 0, 0.1019607843);
+  padding: 0.4rem 0 0.4rem 0.8rem;
+  position: relative;
+  overflow: hidden;
+}
+.card:hover ._checkbox {
+  animation: slide-left 0.75s forwards;
+  visibility: visible;
+}
+.card:not(:hover) ._checkbox {
+  animation: slide-right 0.75s forwards;
+}
+.card:hover .price {
+  animation: inslide-price 0.75s forwards;
+}
+.card:not(:hover) .price {
+  animation: outslide-price 0.75s forwards;
 }
 .card .card_txt {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: baseline;
-  text-align: left;
-  padding: 0.4rem 0 0.4rem 0.8rem;
 }
 .card .card_txt h3 {
+  text-align: left;
   font-weight: 500;
   text-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .card .card_txt p {
+  text-align: left;
   font-weight: 300;
   font-size: 0.8rem;
   text-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: 0;
+  margin: 0;
 }
-.card .cardiv {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
+.card .price {
+  visibility: visible;
+  position: absolute;
+  bottom: 0;
+  right: 3rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
-.card .cardiv p {
-  font-weight: 500;
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-}
-.card .cardiv p span {
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-}
-.card .cardiv p span::after {
-  content: "";
-  display: block;
-  width: 100%;
+.card ._checkbox {
+  visibility: hidden;
+  position: absolute;
+  border-radius: 0 0.8rem 0.8rem 0;
+  bottom: 0%;
+  right: 0;
+  z-index: 15;
   height: 100%;
-  top: 0;
-  left: 0;
-  transform: translateX(100%);
-}
-.card .cardiv p:nth-child(1) {
-  animation: price-moving 0s 0.2s;
-}
-.card .cardiv p:nth-child(1) span::after {
-  font-family: "FontAwesome";
-  text-align: center;
+  width: 3rem;
   background: #99E2D0;
-  animation: appear 0.2s, ease-out, forwards;
+  transition: transform 0.75s ease-out, opacity 0.75s ease-out;
+}
+.card ._checkbox .fa-circle-check {
+  content: "\f058";
+  position: absolute;
+  right: 35%;
+  bottom: 30%;
+  color: #FFFFFF;
 }
 
-@keyframes price-moving {
-  100% {
-    transform: translateX(50%);
-  }
-}
-@keyframes appear {
-  from {
+/* Animation slide-left */
+@keyframes slide-left {
+  0% {
     transform: translateX(100%);
     opacity: 0;
   }
-  to {
-    transform: translateX(50%);
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* Animation slide-right */
+@keyframes slide-right {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+/* Animation inslide-price */
+@keyframes inslide-price {
+  0% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* Animation outslide-price */
+@keyframes outslide-price {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
     opacity: 1;
   }
 }
