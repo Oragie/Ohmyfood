@@ -29,15 +29,15 @@ $--deepgrey-color: #353535;
     pointer-events:none;
     background-color: #000000;
     @include flex-center;
-    animation: fadeout 3s linear 1;
+    animation: fadeout 2s linear 1;
     animation-fill-mode:forwards;
     .lettre {
         max-width: 100%;
         position: relative;
         color: $--main-color;
-        font-size: 2rem;
+        font-size: clamp(2rem, 100vh, 3rem);
         font-family: "Shrikhand", serif;
-        margin: auto;
+        margin: 0;
         padding: 0;
         @include h1;
         animation: flash 1.2s linear 3;

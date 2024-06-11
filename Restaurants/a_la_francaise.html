@@ -7,6 +7,8 @@
     <title>Ohmyfood</title>
 
     <link rel="stylesheet" href="../css/restaurant_page.css">
+    <link rel="stylesheet" href="../css/loader.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,7 +19,18 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
-<body>
+<body class="no-scroll">
+    <div class="loader">
+        <span class="lettre">o</span>
+        <span class="lettre">h</span>
+        <span class="lettre">m</span>
+        <span class="lettre">y</span>
+        <span class="lettre">f</span>
+        <span class="lettre">o</span>
+        <span class="lettre">o</span>
+        <span class="lettre">d</span>
+    </div>
+
     <header>
         <nav class="navbar">
             <a class="goback__button" href="../Index.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
@@ -28,56 +41,137 @@
             <img src="../images/restaurants/la_palette_du_gout/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
                 alt="photo d'assiette gastronomique">
             <div class="restaurant__name">
-                <h1>La palette du goût</h1>
+                <h1>À la française</h1>
                 <i class="fa-regular fa-heart"></i>
                 <i class="fa-solid fa-heart full--heart"></i>
             </div>
         </div>
     </header>
-    À la française
 
-    Entrées
-    Tartare de poulpe acidulé
-    Aux zestes d'orange
-    25€
+    <main>
+        <section class="start__menu">
 
-    Velouté de légumes d'antan
-    Carotte, panais, topinambour
-    35€
+            <!-- beginning menu -->
+            <h2>Entrées</h2>
 
-    Soupe à l'oignon
-    Revisitée
-    20€
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Tartare de poulpe acidulé</h3>
+                    <p>Aux zestes d'orange</p>
+                </div>
+                <p class="price">25€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
 
-    Plats
-    Coquilles Saint-Jacques
-    Accompagnées d'une purée de panais
-    40€
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Velouté de légumes d'antan</h3>
+                    <p>Carotte, panais, topinambour</p>
+                </div>
+                <p class="price">35€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
 
-    Magret de canard
-    Et parmentier de pommes de terre
-    35€
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Soupe à l'oignon</h3>
+                    <p>Revisitée</p>
+                </div>
+                <p class="price">20€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
 
-    Pigeonneau d’Ille-et-Vilaine
-    Sur son lit de gnocchis aux légumes
-    44€
+        </section>
 
-    Desserts
-    Pétales de violettes glacés
-    Et purée de noisettes
-    18€
+        <section class="middle__menu">
 
-    Fondant au chocolat
-    Revisité
-    22€
+            <!-- middle menu -->
+            <h2>Plats</h2>
 
-    Millefeuille croustillant
-    Myrtilles et pâte d’amande
-    23€
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Coquilles Saint-Jacques</h3>
+                    <p>Accompagnées d'une purée de panais</p>
+                </div>
+                <p class="price">40€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Magret de canard</h3>
+                    <p>Et parmentier de pommes de terre</p>
+                </div>
+                <p class="price">35€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Pigeonneau d’Ille-et-Vilaine</h3>
+                    <p>Sur son lit de gnocchis aux légumes</p>
+                </div>
+                <p class="price">44€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+        </section>
+
+        <section class="end__menu">
+
+            <!-- end menu -->
+            <h2>Desserts</h2>
+
+
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Pétales de violettes glacés</h3>
+                    <p>Et purée de noisettes</p>
+                </div>
+                <p class="price">18€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Fondant au chocolat</h3>
+                    <p>Revisité</p>
+                </div>
+                <p class="price">22€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Millefeuille croustillant</h3>
+                    <p>Myrtilles et pâte d’amande</p>
+                </div>
+                <p class="price">23€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- order button -->
+        <button class="button">Commander</button>
+
+    </main>
+
     <footer>
         <!-- logo and all legal stuff each one is a link -->
         <section>
-            <h2>ohmyfood</h2>
+            <h4>ohmyfood</h4>
             <div class="legal">
                 <a href="#">
                     <i class="fa-solid fa-utensils"></i>
@@ -96,4 +190,5 @@
             </div>
         </section>
     </footer>
+
 </body>

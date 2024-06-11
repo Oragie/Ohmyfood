@@ -10,16 +10,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeout 3s linear 1;
+  animation: fadeout 2s linear 1;
   animation-fill-mode: forwards;
 }
 .loader .lettre {
   max-width: 100%;
   position: relative;
   color: #9356DC;
-  font-size: 2rem;
+  font-size: clamp(2rem, 100vh, 3rem);
   font-family: "Shrikhand", serif;
-  margin: auto;
+  margin: 0;
   padding: 0;
   font-weight: 700;
   font-size: clamp(2rem, 5vh, 3rem);

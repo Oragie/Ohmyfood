@@ -7,6 +7,8 @@
     <title>Ohmyfood</title>
 
     <link rel="stylesheet" href="../css/restaurant_page.css">
+    <link rel="stylesheet" href="../css/loader.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,7 +19,18 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
-<body>
+<body class="no-scroll">
+    <div class="loader">
+        <span class="lettre">o</span>
+        <span class="lettre">h</span>
+        <span class="lettre">m</span>
+        <span class="lettre">y</span>
+        <span class="lettre">f</span>
+        <span class="lettre">o</span>
+        <span class="lettre">o</span>
+        <span class="lettre">d</span>
+    </div>
+
     <header>
         <nav class="navbar">
             <a class="goback__button" href="../Index.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
@@ -28,57 +41,138 @@
             <img src="../images/restaurants/la_palette_du_gout/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
                 alt="photo d'assiette gastronomique">
             <div class="restaurant__name">
-                <h1>La palette du goût</h1>
+                <h1>Le délice des sens</h1>
                 <i class="fa-regular fa-heart"></i>
                 <i class="fa-solid fa-heart full--heart"></i>
             </div>
         </div>
     </header>
-    Le délice des sens
 
-    Entrées
-    Tartare de thon
-    Assaisonné au yuzu
-    25€
+    <main>
+        <section class="start__menu">
 
-    Bouchée de homard croustillant
-    Et sa farandole de petits légumes
-    35€
+            <!-- beginning menu -->
+            <h2>Entrées</h2>
 
-    Velouté de cèpes
-    Aux truffes
-    20€
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Tartare de thon</h3>
+                    <p>Assaisonné au yuzu</p>
+                </div>
+                <p class="price">25€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
 
-    Plats
-    Poulet rôti aux herbes de Provence
-    Et sa crème de truffe
-    40€
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Bouchée de homard croustillant</h3>
+                    <p>Et sa farandole de petits légumes</p>
+                </div>
+                <p class="price">35€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
 
-    Langouste rôtie
-    Et ses légumes de saison
-    35€
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Velouté de cèpes</h3>
+                    <p>Aux truffes</p>
+                </div>
+                <p class="price">20€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
 
-    Côte de bœuf Angus
-    Et sa purée de panais
-    44€
+        </section>
 
-    Desserts
-    Farandole de desserts
-    Du chef
-    18€
+        <section class="middle__menu">
+            <!-- middle menu -->
+            <h2>Plats</h2>
 
-    Crème brulée
-    Revisitée
-    22€
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Poulet rôti aux herbes de Provence</h3>
+                    <p> Et sa crème de truffe</p>
+                </div>
+                <p class="price">40€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
 
-    Tiramisu
-    À la noisette
-    23€
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Langouste rôtie</h3>
+                    <p>Et ses légumes de saison</p>
+                </div>
+                <p class="price">35€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Côte de bœuf Angus</h3>
+                    <p>Et sa purée de panais</p>
+                </div>
+                <p class="price"> 44€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+        </section>
+        <section class="end__menu">
+            <!-- end menu -->
+            <h2>Desserts</h2>
+
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Farandole de desserts</h3>
+                    <p>Du chef</p>
+                </div>
+                <p class="price">18€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Crème brulée</h3>
+                    <p> Revisitée</p>
+                </div>
+                <p class="price"> 22€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Tiramisu</h3>
+                    <p>À la noisette</p>
+                </div>
+                <p class="price">23€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+        </section>
+
+        <!-- order button -->
+        <button class="button">Commander</button>
+
+    </main>
 
     <footer>
         <!-- logo and all legal stuff each one is a link -->
         <section>
-            <h2>ohmyfood</h2>
+            <h4>ohmyfood</h4>
             <div class="legal">
                 <a href="#">
                     <i class="fa-solid fa-utensils"></i>

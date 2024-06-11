@@ -156,13 +156,13 @@ main{
         visibility: hidden;
         animation: slide-in 0.75s ease-out forwards;
         &.start__menu{
-                animation-delay: 4s;
+                animation-delay: 3s;
         }
         &.middle__menu{
-            animation-delay: 5s;
+            animation-delay: 4s;
         }
         &.end__menu{
-            animation-delay: 6s;
+            animation-delay: 5s;
         }
     }
 }

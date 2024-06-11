@@ -7,6 +7,8 @@
     <title>Ohmyfood</title>
 
     <link rel="stylesheet" href="../css/restaurant_page.css">
+    <link rel="stylesheet" href="../css/loader.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,7 +19,18 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
-<body>
+<body class="no-scroll">
+    <div class="loader">
+        <span class="lettre">o</span>
+        <span class="lettre">h</span>
+        <span class="lettre">m</span>
+        <span class="lettre">y</span>
+        <span class="lettre">f</span>
+        <span class="lettre">o</span>
+        <span class="lettre">o</span>
+        <span class="lettre">d</span>
+    </div>
+
     <header>
         <nav class="navbar">
             <a class="goback__button" href="../Index.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
@@ -28,61 +41,147 @@
             <img src="../images/restaurants/la_palette_du_gout/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
                 alt="photo d'assiette gastronomique">
             <div class="restaurant__name">
-                <h1>La palette du goût</h1>
+                <h1>La note enchantée</h1>
                 <i class="fa-regular fa-heart"></i>
                 <i class="fa-solid fa-heart full--heart"></i>
             </div>
         </div>
     </header>
-    La note enchantée
 
-    Entrées
-    Ravioles de foie gras
-    Accompagnées de leur crème à la truffe
-    25€
+    <main>
+        <section class="start__menu">
 
-    Caviar osciètre
-    Sur blini à la farine de blé noir
-    35€
+            <!-- beginning menu -->
+            <h2>Entrées</h2>
 
-    Homard et espuma de potiron
-    Marinés aux zestes d'orange
-    20€
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Ravioles de foie gras </h3>
+                    <p>Accompagnées de leur crème à la truffe</p>
+                </div>
+                <p class="price">25€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
 
-    Foie gras de canard cuit entier
-    Confiture de figue et pain toasté
-    35€
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Caviar osciètre</h3>
+                    <p>Sur blini à la farine de blé noir</p>
+                </div>
+                <p class="price">35€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
 
-    Plats
-    Noix de coquilles Saint-Jacques
-    Sur lit de purée de céleri-rave
-    40€
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Homard et espuma de potiron</h3>
+                    <p>Marinés aux zestes d'orange</p>
+                </div>
+                <p class="price">20€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
 
-    Langoustine poêlée
-    Purée de patate douce
-    35€
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Foie gras de canard cuit entier</h3>
+                    <p>Confiture de figue et pain toasté</p>
+                </div>
+                <p class="price">35€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
 
-    Mijoté de queue de bœuf
-    Et riz sauvage aux zestes de citron
-    44€
+        </section>
 
-    Desserts
-    Macaron noisette et chocolat
-    Glace au caramel brun et sel de Guérande
-    18€
+        <section class="middle__menu">
 
-    Baba au rhum revisité
-    Avec son coulis de citron
-    22€
+            <!-- middle menu -->
+            <h2>Plats</h2>
 
-    Tarte au citron meringuée
-    Déstructurée
-    23€
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Noix de coquilles Saint-Jacques</h3>
+                    <p>Sur lit de purée de céleri-rave</p>
+                </div>
+                <p class="price">40€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Langoustine poêlée</h3>
+                    <p>Purée de patate douce</p>
+                </div>
+                <p class="price">35€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Mijoté de queue de bœuf</h3>
+                    <p>Et riz sauvage aux zestes de citron</p>
+                </div>
+                <p class="price">44€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+        </section>
+
+        <section class="end__menu">
+
+            <!-- end menu -->
+            <h2>Desserts</h2>
+
+
+            <!-- card choice -->
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Macaron noisette et chocolat</h3>
+                    <p>Glace au caramel brun et sel de Guérande</p>
+                </div>
+                <p class="price">18€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Baba au rhum revisité</h3>
+                    <p>Avec son coulis de citron</p>
+                </div>
+                <p class="price">22€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card_txt">
+                    <h3>Tarte au citron meringué</h3>
+                    <p>Déstructurée</p>
+                </div>
+                <p class="price">23€</p>
+                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- order button -->
+        <button class="button">Commander</button>
+
+    </main>
 
     <footer>
         <!-- logo and all legal stuff each one is a link -->
         <section>
-            <h2>ohmyfood</h2>
+            <h4>ohmyfood</h4>
             <div class="legal">
                 <a href="#">
                     <i class="fa-solid fa-utensils"></i>
@@ -101,4 +200,5 @@
             </div>
         </section>
     </footer>
+
 </body>
