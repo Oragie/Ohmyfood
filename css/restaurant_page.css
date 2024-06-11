@@ -37,6 +37,12 @@ p {
   padding: 1rem;
   width: 197px;
 }
+@media screen and (min-width: 1080px) {
+  .navbar .navbar__logo {
+    height: 3rem;
+    width: auto;
+  }
+}
 .navbar a {
   color: #000000;
   text-decoration: none;

@@ -59,6 +59,10 @@ p{
     .navbar__logo{
         padding: 1rem;
         width: 197px;
+        @media screen and (min-width: 1080px) {
+            height: 3rem;
+            width: auto;           
+        }
     }
     a{
         color: $--reversetext-color;

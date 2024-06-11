@@ -35,6 +35,12 @@ h2 {
   max-width: 100%;
   width: 197px;
 }
+@media screen and (min-width: 1080px) {
+  .navbar .navbar__logo {
+    height: 3rem;
+    width: auto;
+  }
+}
 .navbar.navbar div {
   display: flex;
   flex-direction: row;
@@ -99,10 +105,9 @@ h2 {
 }
 @media screen and (min-width: 1080px) {
   .tutorial {
-    max-width: 1080px;
     width: 1080px;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
+    padding: auto;
   }
 }
 .tutorial h1 {
@@ -120,7 +125,7 @@ h2 {
     max-width: 1080px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: cal(100%/3);
   }
@@ -161,9 +166,29 @@ h2 {
   flex-direction: column;
   background-color: #F6F6F6;
 }
-.restaurants h1 {
+@media screen and (min-width: 1080px) {
+  .restaurants {
+    margin: auto;
+    padding: auto;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .restaurants .background_screen {
+    width: 1080px;
+    margin: auto;
+    padding: auto;
+  }
+}
+.restaurants .background_screen h1 {
   text-align: left;
   padding: 3rem 0 0 1rem;
+}
+@media screen and (min-width: 1080px) {
+  .restaurants .background_screen .main_card_container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
 }
 .restaurants h3 {
   font-size: 18px;
@@ -184,6 +209,11 @@ h2 {
   border-radius: 15px;
   margin: 1.5rem;
   position: relative;
+}
+@media screen and (min-width: 1080px) {
+  .restaurants .card {
+    width: 480px;
+  }
 }
 .restaurants .card .fa-heart {
   font-size: 24px;
@@ -245,8 +275,26 @@ footer {
   background-color: #353535;
   color: #FFFFFF;
 }
+@media screen and (min-width: 1080px) {
+  footer {
+    padding-top: 2rem;
+    padding-right: 1rem;
+  }
+}
 footer section {
   flex-direction: column;
+}
+@media screen and (min-width: 1080px) {
+  footer section {
+    max-width: 1080px;
+    width: 1080px;
+    padding: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    align-items: right;
+  }
 }
 footer h2 {
   font-family: "Shrikhand", serif;
@@ -255,9 +303,22 @@ footer h2 {
   text-align: left;
   padding: 1.5rem 0 1rem 2rem;
 }
+@media screen and (min-width: 1080px) {
+  footer h2 {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+}
 footer div {
   display: flex;
   flex-direction: column;
+}
+@media screen and (min-width: 1080px) {
+  footer div {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+  }
 }
 footer a {
   display: flex;
@@ -274,4 +335,9 @@ footer a .fa-utensils {
   width: 16px;
   height: 16px;
   padding-right: 0.8rem;
+}
+@media screen and (min-width: 1080px) {
+  footer a {
+    padding: 0 0 0 2rem;
+  }
 }/*# sourceMappingURL=main.css.map */

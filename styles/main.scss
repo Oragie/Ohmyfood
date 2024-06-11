@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     text-align: center;
+    
 }
 
 h1{
@@ -42,7 +43,8 @@ h2{
     justify-content: center;
     align-items: center;
 }
-    
+
+
 /* BEM (Block element modifictaor) */
 /* ceci est notre bloc */
 .navbar{
@@ -56,7 +58,10 @@ h2{
         padding: 1rem;
         max-width: 100%;
         width: 197px;
-        
+        @media screen and (min-width: 1080px) {
+            height: 3rem;
+            width: auto;           
+        }
     }
     &.navbar div{
         display: flex;
@@ -72,9 +77,11 @@ h2{
         p{
             font-weight: 500;
         }
+        
     }
    
 }
+
 
 /* advertising section and link*/
 .advertising{
@@ -88,6 +95,7 @@ h2{
         padding: 2rem;
         padding-bottom: 1rem;
     }
+    
 }
 
 
@@ -122,16 +130,15 @@ h2{
 .tutorial{
     display: flex;
     flex-direction: column;
-    @media screen and (min-width: 1080px) {
-        max-width: 1080px;
+    @media screen and (min-width:1080px){
         width: 1080px;
-        justify-content: center;
-        align-items: center;
+        margin: auto;
+        padding: auto;
     }
-    
     h1{
         text-align: left;
         padding: 2rem 0 1.5rem 1rem;
+        
     }
     .step{
         display:flex;
@@ -142,7 +149,7 @@ h2{
             max-width: 1080px;
             display: flex;
             flex-direction: row;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             width: cal(100%/3);            
         }
@@ -185,9 +192,27 @@ h2{
     display: flex;
     flex-direction: column;
     background-color: $--BG-color;
-    h1{
-        text-align: left;
-        padding: 3rem 0 0 1rem;
+    @media screen and (min-width:1080px){
+        margin: auto;
+        padding: auto;
+    }
+    .background_screen{
+        @media screen and (min-width:1080px){
+            width: 1080px;
+            margin: auto;
+            padding: auto;
+        }
+        h1{
+            text-align: left;
+            padding: 3rem 0 0 1rem;
+        }
+        .main_card_container{
+            @media screen and (min-width:1080px){
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+            }
+        }
     }
     h3{
         font-size: 18px;
@@ -208,6 +233,9 @@ h2{
         border-radius: 15px;
         margin: 1.5rem;
         position: relative;
+        @media screen and (min-width:1080px){
+            width: 480px;
+        }
         .fa-heart{
             font-size: 24px;
             position: absolute;
@@ -225,6 +253,7 @@ h2{
                 -webkit-text-fill-color: transparent;
             }
         }
+         
     }
     
     .new{
@@ -273,8 +302,23 @@ footer{
     flex-direction: column;
     background-color: $--deepgrey-color;
     color: $--text-color;
+    @media screen and (min-width:1080px){
+        padding-top: 2rem;
+        padding-right: 1rem;
+    }    
     section{
         flex-direction: column;
+        @media screen and (min-width:1080px){
+           max-width: 1080px;
+           width: 1080px;
+           padding: auto;
+           margin: auto;
+           display: flex;
+           flex-direction: row-reverse;
+           justify-content: end;
+           align-items: right;
+                       
+        }
     }
     h2{
         font-family: "Shrikhand", serif;
@@ -282,10 +326,22 @@ footer{
         font-weight: 400;
         text-align: left;
         padding: 1.5rem 0 1rem 2rem;
+        @media screen and (min-width:1080px){
+            font-size: 1.5rem;
+            padding: 1rem;
+             
+            
+        }
     }
     div{
         display: flex;
         flex-direction: column;
+        @media screen and (min-width:1080px){
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+        }
+        
     }
     a{
         display: flex;
@@ -301,6 +357,9 @@ footer{
             width: 16px;
             height: 16px;
             padding-right: 0.8rem;
+        }
+        @media screen and (min-width:1080px){
+            padding: 0 0 0 2rem;
         }
         
     }
