@@ -1,53 +1,12 @@
-/***** general *****/
-
-* {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 18px;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    max-width: 100%;
-}
-html, body{
-    height: 100vh;
-    width: 100%;
-}
-
-  /* variable */
-  $--main-color: #9356DC;
-  $--secondary-color: #FF79DA;
-  $--third-color:#99E2D0;
-  $--newtxt-color : #008766;
-  $--BG-color: #F6F6F6;
-  $--text-color: #FFFFFF;
-  $--reversetext-color:#000000 ;
-  $--BGfooter-color: #353535;
-
-  @mixin flex-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin h1{
-    font-weight: 700;
-    font-size: clamp(1rem, 5vh, 3rem);
-}
-
-@mixin dots{
-    text-wrap: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-p{
-    padding-left: 1rem;
-    @include dots;
-}
+@import "./base.scss";
 
 /** Header **/
+header {
+    @media screen and (min-width:1080px){
+        margin: auto;
+        padding: auto;
+    }
+}
 /* back button and logo*/
 .navbar{
     width: 100%;
@@ -75,34 +34,35 @@ p{
 
 /* stylised pictures */ 
 .restaurant__img{
-    max-width: 100%;
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    max-height: 50vh;
+    min-height: 33vh;
+    object-fit: cover;
+    overflow: hidden;
+    z-index: -10;
+}
+    
+/** restaurant name **/
+.restaurant__name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     position: relative;
-    img{
-        max-width: 100%;
-    }
-    /** restaurant name **/
-    .restaurant__name{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-    }
+    margin: auto;
+    padding: auto;
+    background-color: $--BG-color;
+    border-radius: 50px 50px 0 0;
+    margin-top: -50px;
+    max-width: 1080px;
+      
+    
     h1{
-        width: 100%;
-        
-        bottom: 0;
-        left: 0;
-        background-color: $--BG-color;
+        padding: 2rem 1rem 1rem 1rem;
         font-family: Shrikhand;
-        @include h1;
-        border-radius: 50px 50px 0 0 ;
-        padding-top:2rem ;
-        text-align: left;
-        padding-left: 1rem;
-        padding-bottom: 1rem;
+
+        
     }
     .fa-heart{
         font-size: 24px;
@@ -123,16 +83,38 @@ p{
         &:not(:active){
             opacity: 0;
         }
+        @media screen and (min-width: 1080px) {
+            &:hover{
+                opacity: 1;
+                background: -webkit-linear-gradient($--main-color,$--secondary-color);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            &:not(:hover){
+                opacity: 0;
+            }
+        }
+            
+        
     }
 }
+    
+
 
 /* menu choice */
 main{
     width: 100%;
     background-color: $--BG-color;
+    @media screen and (min-width:1080px){
+        width: 1080px;
+        margin: auto;
+        padding: auto;
+        overflow: hidden;
+    }
     h2{
         display: table;
         text-transform: uppercase ;
+        font-family: "Roboto", sans-serif;
         font-size: 16px;
         font-weight: 300;
         text-align: left;
@@ -141,12 +123,18 @@ main{
         &:after{
             content: "";
             position: absolute;
-            width: 8%;
+            width: 2rem;
             height: 1px;
             bottom: 0;
             left: 0.8rem;
             right: 25%;
             border-bottom: 3px solid $--third-color;
+        }
+        @media screen and (min-width:1080px) {
+            font-size: 1.2rem;
+            &:after{
+                width: 3rem;
+            }
         }
     }
     section{
@@ -182,6 +170,7 @@ main{
 
 .card{
     display: flex;
+    flex-direction: row;
     background-color: $--text-color;
     border-radius: .8rem;
     box-shadow: 0px 0.2rem 1rem 0px #0000001A;
@@ -202,8 +191,10 @@ main{
         animation: outslide-price 0.75s forwards;
     }
     .card_txt{
+        width: 60%;
         display: flex;
         flex-direction: column;
+        @include dots;
         
         h3{
             text-align: left;
@@ -214,11 +205,12 @@ main{
             text-align: left;
             font-weight: 300;
             font-size: 0.8rem;
-            @include dots;
+            
             padding: 0;
             margin: 0;
         }   
     }
+    
     .price{
         visibility: visible;
         position: absolute;
@@ -327,38 +319,68 @@ button{
 footer{
     display: flex;
     flex-direction: column;
-    background-color:$--BGfooter-color;
+    background-color: $--BGfooter-color;
     color: $--text-color;
-    padding-bottom: auto;
+    @media screen and (min-width:1080px){
+        padding-top: 2rem;
+        padding-right: 1rem;
+    }    
     section{
         flex-direction: column;
+        @media screen and (min-width:1080px){
+           max-width: 1080px;
+           width: 1080px;
+           padding: auto;
+           margin: auto;
+           display: flex;
+           flex-direction: row-reverse;
+           justify-content: end;
+           align-items: right;
+                       
+        }
     }
-    h4{
+    h2{
         font-family: "Shrikhand", serif;
         font-size: 19px;
         font-weight: 400;
         text-align: left;
-        padding: 1.5rem 0 1rem 1.5rem;
+        padding: 1.5rem 0 1rem 2rem;
+        @media screen and (min-width:1080px){
+            font-size: 1.5rem;
+            padding: 1rem;
+             
+            
+        }
     }
     div{
         display: flex;
         flex-direction: column;
-        a{
+        @media screen and (min-width:1080px){
             display: flex;
             flex-direction: row;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 0 0 0.5rem 1.5rem;
-            color: $--text-color;
-            font-size: 16px;
-            text-decoration: none;
-            .fa-handshake-angle,
-            .fa-utensils{
-                width: 16px;
-                height: 16px;
-                padding-right: 0.8rem;
-            }
-            
+            justify-content: right;
         }
+        
     }
+    a{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0 0 0.5rem 2rem;
+        color: $--text-color;
+        font-size: 16px;
+        text-decoration: none;
+        .fa-handshake-angle,
+        .fa-utensils{
+            width: 16px;
+            height: 16px;
+            padding-right: 0.8rem;
+        }
+        @media screen and (min-width:1080px){
+            padding: 0 0 0 2rem;
+        }
+        
+    }
+    
 }

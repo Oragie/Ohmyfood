@@ -1,4 +1,28 @@
+/***** general *****/
+* {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  max-width: 100%;
+}
+
+html, body {
+  height: 100vh;
+  width: 100%;
+}
+
 /* variable */
+p {
+  padding-left: 1rem;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* loader*/
 .loader {
   position: fixed;
@@ -22,7 +46,7 @@
   margin: 0;
   padding: 0;
   font-weight: 700;
-  font-size: clamp(2rem, 5vh, 3rem);
+  font-size: clamp(1rem, 5vh, 3rem);
   animation: flash 1.2s linear 3;
 }
 @media screen and (min-width: 1080px) {

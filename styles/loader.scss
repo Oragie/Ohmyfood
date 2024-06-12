@@ -1,24 +1,4 @@
-/* variable */
-$--main-color: #9356DC;
-$--secondary-color: #FF79DA;
-$--third-color:#99E2D0;
-$--newtxt-color : #008766;
-$--BG-color: #F6F6F6;
-$--text-color: #FFFFFF;
-$--reversetext-color:#000000 ;
-$--navbg-color: #EAEAEA;
-$--deepgrey-color: #353535;
-
-@mixin flex-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin h1{
-    font-weight: 700;
-    font-size: clamp(2rem, 5vh, 3rem);
-}
+@import "./base.scss";
 
 /* loader*/
  .loader{

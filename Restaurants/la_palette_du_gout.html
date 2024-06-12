@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../css/restaurant_page.css">
     <link rel="stylesheet" href="../css/loader.css">
+    <link rel="stylesheet" href="../css/base.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,16 +36,19 @@
         <nav class="navbar">
             <a class="goback__button" href="../Index.html"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
             <!-- logo -->
+
             <img class="navbar__logo" src="../images/logo/ohmyfood.png" alt="Logo ohmyfood" title="Accueil">
         </nav>
         <div class="restaurant__img">
             <img src="../images/restaurants/la_palette_du_gout/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
                 alt="photo d'assiette gastronomique">
-            <div class="restaurant__name">
-                <h1>La palette du goût</h1>
+        </div>
+        <div class="restaurant__name">
+            <h1>La palette du goût</h1>
+            <p>
                 <i class="fa-regular fa-heart"></i>
                 <i class="fa-solid fa-heart full--heart"></i>
-            </div>
+            </p>
         </div>
     </header>
 
@@ -70,8 +74,10 @@
                     <h3>Foie gras de canard mi-cuit</h3>
                     <p>Et ses copeaux de truffe noire</p>
                 </div>
-                <p class="price">35€</p>
-                <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                <div class="card_price">
+                    <p class="price">35€</p>
+                    <div class="_checkbox"><i class="fa-solid fa-circle-check"></i>
+                    </div>
                 </div>
             </article>
 
@@ -171,7 +177,7 @@
     <footer>
         <!-- logo and all legal stuff each one is a link -->
         <section>
-            <h4>ohmyfood</h4>
+            <h2>ohmyfood</h2>
             <div class="legal">
                 <a href="#">
                     <i class="fa-solid fa-utensils"></i>
@@ -190,5 +196,6 @@
             </div>
         </section>
     </footer>
-
 </body>
+
+</html>
